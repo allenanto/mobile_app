@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ folder }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{ folder }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div *ngIf="folder === 'Home'" class="property-cards">
+    <!-- Card 1 -->
+    <ion-card>
+      <img src="./assets/images/property1.png" alt="Property 1">
+      <ion-card-header>
+        <ion-card-subtitle>Apartment</ion-card-subtitle>
+        <ion-card-title>Modern Downtown Loft</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Located in the heart of the city, this modern loft offers stunning views and luxurious amenities.</p>
+        <ion-button expand="block" color="primary">View Details</ion-button>
+      </ion-card-content>
+    </ion-card>
+  
+    <!-- Card 2 -->
+    <ion-card>
+      <img src="assets/images/property2.png" alt="Property 2">
+      <ion-card-header>
+        <ion-card-subtitle>House</ion-card-subtitle>
+        <ion-card-title>Spacious Family Home</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Perfect for families, this spacious home features multiple bedrooms, a large backyard, and a cozy fireplace.</p>
+        <ion-button expand="block" color="primary">View Details</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div *ngIf="folder === 'Logout'" class="property-cards">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Are you sure you want to logout</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button (click)="logoutuser()">Yes</ion-button>
+        <ion-button (click)="cancellogout()">No</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
